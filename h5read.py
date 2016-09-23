@@ -1,3 +1,5 @@
+#Kaustuv Datta and Jayesh Mahapatra, July 2016
+
 import numpy as np
 import h5py
 
