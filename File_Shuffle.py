@@ -18,10 +18,10 @@ energies, prior to data feeding for neural network training or inference.
 
 '''
 
-def shuffle(N)
-    for i in xrange(0,N):
+def shuffle(N) 
+#N=max number of times for shuffling operations to be carried out, recommended N >= 200
+    for i in xrange(0,N): 
         
-
         #random seed is created  between 1 and 100, the range of file numbers
         perm=np.random.permutation(np.arange(1, 101))
         
@@ -37,6 +37,8 @@ def shuffle(N)
         f0=h5py.File(fname0,'r+')
         f1=h5py.File(fname1,'r+')
        
+        #reads h5 event files
+
         np_ECAL0 = np.array(f0.get('ECAL'))
         np_HCAL0 = np.array(f0.get('HCAL'))
         np_target0 = np.array(f0.get('target'))
@@ -60,6 +62,8 @@ def shuffle(N)
         
         print (lim)
         
+        #file shuffling is carried out with the same random seed on ECAL, HCAL image and target arrays
+
         np_ECAL = np_ECAL[rperm]
         np_HCAL = np_HCAL[rperm]
         np_target = np_target[rperm]
@@ -71,6 +75,8 @@ def shuffle(N)
         nptarget0 = np_target[:lim]
         nptarget1 = np_target[lim:]  
             
+        #two new shuffled files are overwritten on previously opened files
+         
         with h5py.File(fname0,'w') as hf:
             hf.create_dataset('ECAL', data=npECAL0)
             hf.create_dataset('HCAL', data=npHCAL0)
