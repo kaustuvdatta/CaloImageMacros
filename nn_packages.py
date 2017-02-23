@@ -1,4 +1,4 @@
-#Kaustuv Datta, June 2016 
+#Kaustuv Datta, Niki Howe, Jayesh Mahapatra June 2016 
 #one of several small classes for streamlining code
 
 import numpy as np
