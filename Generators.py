@@ -36,22 +36,11 @@ class ClsGen:
         '''
         length = len(self.filelist)
         #deleting the validation and test set filenames from the filelist
-        del self.filelist[np.floor((1-(self.train_split))*length).astype(int):]
+        del self.filelist[np.floor(((self.train_split))*length).astype(int):]
         return self.batches(modeltype)
     #function to call when generating data for testing
 
-
-    def test(self,modeltype=3):
-        '''
-        Generate data for testing only
-        '''
-        length = len(self.filelist)
-        #deleting the train and validation set filenames from the filelist
-        del self.filelist[:np.floor((1-self.test_split)*length).astype(int)+1]
-        return self.batches(modeltype)
     #function to call when generating data for validating
-
-
     def validation(self,modeltype=3):
         '''
         Generate data for validation only
@@ -183,16 +172,9 @@ class RegGen:
         '''
         length = len(self.filelist)
         #deleting the validation and test set filenames from the filelist
-        del self.filelist[int(np.floor((1 - self.train_split) * length)):]
+        del self.filelist[int(np.floor((self.train_split) * length)):]
         return self.batches(modeltype)
-    def test(self, modeltype=3):
-        '''
-        Generate data for testing only
-        '''
-        length = len(self.filelist)
-        #deleting the train and validation set filenames from the filelist
-        del self.filelist[:int(np.floor((1 - self.test_split) * length)) + 1]
-        return self.batches(modeltype)
+    
     def validation(self, modeltype=3):
         '''
         Generate data for validation only
@@ -319,22 +301,12 @@ class RegClsGen:
         '''
         length = len(self.filelist)
         #deleting the validation and test set filenames from the filelist
-        del self.filelist[np.floor((1-(self.train_split))*length).astype(int):]
+        del self.filelist[np.floor(((self.train_split))*length).astype(int):]
         return self.batches(modeltype)
     #function to call when generating data for testing
 
 
-    def test(self,modeltype=3):
-        '''
-        Generate data for testing only
-        '''
-        length = len(self.filelist)
-        #deleting the train and validation set filenames from the filelist
-        del self.filelist[:np.floor((1-self.test_split)*length).astype(int)+1]
-        return self.batches(modeltype)
     #function to call when generating data for validating
-
-
     def validation(self,modeltype=3):
         '''
         Generate data for validation only
@@ -477,22 +449,12 @@ class ClsGen:
         '''
         length = len(self.filelist)
         #deleting the validation and test set filenames from the filelist
-        del self.filelist[np.floor((1-(self.train_split))*length).astype(int):]
+        del self.filelist[np.floor(((self.train_split))*length).astype(int):]
         return self.batches(modeltype)
     #function to call when generating data for testing
 
 
-    def test(self,modeltype=3):
-        '''
-        Generate data for testing only
-        '''
-        length = len(self.filelist)
-        #deleting the train and validation set filenames from the filelist
-        del self.filelist[:np.floor((1-self.test_split)*length).astype(int)+1]
-        return self.batches(modeltype)
     #function to call when generating data for validating
-
-
     def validation(self,modeltype=3):
         '''
         Generate data for validation only
@@ -624,16 +586,9 @@ class RegGen:
         '''
         length = len(self.filelist)
         #deleting the validation and test set filenames from the filelist
-        del self.filelist[int(np.floor((1 - self.train_split) * length)):]
+        del self.filelist[int(np.floor((self.train_split) * length)):]
         return self.batches(modeltype)
-    def test(self, modeltype=3):
-        '''
-        Generate data for testing only
-        '''
-        length = len(self.filelist)
-        #deleting the train and validation set filenames from the filelist
-        del self.filelist[:int(np.floor((1 - self.test_split) * length)) + 1]
-        return self.batches(modeltype)
+
     def validation(self, modeltype=3):
         '''
         Generate data for validation only
@@ -760,22 +715,12 @@ class RegClsGen:
         '''
         length = len(self.filelist)
         #deleting the validation and test set filenames from the filelist
-        del self.filelist[np.floor((1-(self.train_split))*length).astype(int):]
+        del self.filelist[np.floor(((self.train_split))*length).astype(int):]
         return self.batches(modeltype)
     #function to call when generating data for testing
 
 
-    def test(self,modeltype=3):
-        '''
-        Generate data for testing only
-        '''
-        length = len(self.filelist)
-        #deleting the train and validation set filenames from the filelist
-        del self.filelist[:np.floor((1-self.test_split)*length).astype(int)+1]
-        return self.batches(modeltype)
     #function to call when generating data for validating
-
-
     def validation(self,modeltype=3):
         '''
         Generate data for validation only
